@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: kosmos-worm
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
