@@ -1,0 +1,36 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:system-ui,Arial;background:#0b1020;color:#eaf6ff;overflow:hidden}
+
+/* меню */
+.top{position:fixed;left:0;right:0;top:0;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;z-index:5;background:#0007;border-bottom:1px solid #ffffff22;backdrop-filter:blur(6px)}
+.top .brand{font-weight:900;letter-spacing:0.5px}
+.top .row{display:flex;gap:8px;align-items:center}
+.top input,.top select,.btn{padding:8px 10px;border:1px solid #ffffff2a;border-radius:10px;background:#ffffff10;color:#fff}
+.btn{cursor:pointer}
+
+.menu{position:fixed;inset:56px 0 0 0;display:grid;place-items:center;gap:18px;padding:14px;overflow:auto}
+.cover{position:relative;width:min(1100px,94vw);aspect-ratio:19/9;border-radius:14px;overflow:hidden;border:1px solid #ffffff22;background:
+  radial-gradient(120% 100% at 80% -10%,#2f165a66 0%,transparent 50%),
+  radial-gradient(120% 100% at -20% 120%,#0ac6ff33 0%,transparent 60%),
+  #0f1630}
+.cover>img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.05) saturate(1.07)}
+.cover__fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.cover__fallback h1{font-size:clamp(28px,6vw,52px);letter-spacing:1px}
+.cover__fallback p{opacity:.9}
+.howto{width:min(1100px,94vw);border:1px solid #ffffff22;border-radius:12px;background:#0e152d;box-shadow:0 10px 30px #0007;padding:14px;line-height:1.6}
+
+/* HUD игры */
+.hud{display:none}
+.hud.active{display:block}
+.hud__bar{position:fixed;left:0;right:0;top:0;display:flex;align-items:center;gap:12px;padding:8px 10px;background:#0007;border-bottom:1px solid #ffffff20;z-index:5}
+.lb{display:flex;gap:8px;flex-wrap:wrap;opacity:.9;font-size:12px}
+#game{position:fixed;inset:0;touch-action:none}
+#minimap{position:fixed;right:8px;top:8px;border-radius:999px;border:1px solid #3ad7ff88;background:#061423cc;backdrop-filter:blur(6px);z-index:5}
+
+/* тач-кнопка ускорения (невидимая) */
+.boostPad{position:fixed;left:12px;bottom:12px;width:120px;height:120px;border-radius:999px;opacity:0;touch-action:none;z-index:5}
+
+/* скрывалка меню при игре */
+body.playing .top, body.playing .menu{display:none}
+body.playing .hud{display:block}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KOSMOS.WORM — Multiplayer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">✨ KOSMOS.WORM</div>
+  <div class="row">
+    <label>Имя <input id="name" maxlength="16" value="Kosmos"></label>
+    <label>Скин
+      <select id="skin">
+        <option value="#6bf2ff">Неон голубой</option>
+        <option value="#7eff6b">Лайм</option>
+        <option value="#ff6be6">Розовый</option>
+        <option value="#ffaa6b">Апельсин</option>
+        <option value="#7aa3ff">Синий</option>
+        <option value="#ffd86b">Жёлтый</option>
+      </select>
+    </label>
+    <button id="play" class="btn">Играть</button>
+  </div>
+</header>
+
+<main class="menu">
+  <figure class="cover">
+    <img src="assets/cover.png" alt="Cover" onerror="this.style.display='none'">
+    <div class="cover__fallback">
+      <h1>KOSMOS.WORM</h1>
+      <p>Многопользовательская аркада со светящимися червями</p>
+      <small>Загрузите свою обложку в <code>/client/assets/cover.png</code></small>
+    </div>
+  </figure>
+
+  <section class="howto">
+    Управление: мышь/тач — направление, <b>пробел / левый круг</b> — ускорение.
+    Бусты: <b>👻</b> призрак, <b>🧲</b> магнит, <b>⚡</b> турбо.
+  </section>
+</main>
+
+<!-- HUD игры -->
+<div class="hud">
+  <div class="hud__bar">
+    <div class="score">Счёт: <b id="score">0</b></div>
+    <div class="lb" id="lb"></div>
+    <button id="exit" class="btn">В меню</button>
+  </div>
+  <canvas id="minimap" width="140" height="140"></canvas>
+  <div id="boostPad" class="boostPad" title="ускорение"></div>
+  <canvas id="game"></canvas>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
