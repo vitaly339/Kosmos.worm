@@ -25,6 +25,7 @@ const now = ()=> Date.now();
 
 // === Express + WS
 const app = express();
+app.get('/health', (req,res) => res.status(200).send('ok'));
 app.use(express.static(clientDir));           // раздаём статику из ../client
 app.get('*', (req, res) => {                  // для любых путей -> index.html
   res.sendFile(path.join(clientDir, 'index.html'));
